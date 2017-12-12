@@ -1,6 +1,6 @@
 public class Wizard extends Hero{
     public Wizard(String name) {
-        super(name, 100, 20, 2, 3, 0.1);
+        super(name, 100, 23, 2, 3, 0.1);
     }
  public final void attack(final Hero opponent) {
         double specProb = Math.random();
@@ -16,7 +16,7 @@ public class Wizard extends Hero{
         opponent.healthPoints -= (3 * this.attackPoints) - opponent.defense;
     } else 
         if(Math.random() >=dodgeProb) {
-        System.out.println(opponent.name + " dodged your attack!");
+        	System.out.println(opponent.name + " dodged " + this.name + "'s attack!");
     } else {
           System.out.println(this.name + " attacks opponent with basic attack!");
             opponent.healthPoints -= this.attackPoints - opponent.defense;

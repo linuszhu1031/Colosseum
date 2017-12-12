@@ -8,8 +8,15 @@ public class Assassin extends Hero {
         double dodgeProb = 1 - opponent.dodge;
         double instantKill = Math.random();
         
+        //assassin v assassin special interaction
+        if (opponent instanceof Assassin) {
+        	if (Math.random() > .5) {
+        		instantKill = .01; 
+        	}
+        }
+        
         if (instantKill <= .01) {
-        	System.out.println(this.name + " instantly kills you.");
+        	System.out.println(this.name + " instantly kills" + opponent.name);
         	opponent.healthPoints = 0; 
         } else
         if (specProb >= 0.9){
@@ -17,7 +24,7 @@ public class Assassin extends Hero {
            opponent.healthPoints -= (3 * this.attackPoints) - opponent.defense;
         } else 
             if (Math.random() >= dodgeProb){
-                System.out.println(opponent.name + " dodged!"); 
+                System.out.println(opponent.name + " dodged " + this.name + "'s attack!"); 
         } else {
             System.out.println(this.name + " attacks!"); 
             opponent.healthPoints -= this.attackPoints - opponent.defense; 

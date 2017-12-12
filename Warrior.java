@@ -16,7 +16,7 @@ public class Warrior extends Hero{
         opponent.healthPoints -= (3 * this.attackPoints) - opponent.defense;
     } else 
         if(Math.random() >=dodgeProb) {
-        System.out.println(opponent.name + " dodged your attack!");
+        	System.out.println(opponent.name + " dodged " + this.name + "'s attack!");
     } else {
           System.out.println(this.name + " attacks opponent with basic attack!");
             opponent.healthPoints -= this.attackPoints - opponent.defense;

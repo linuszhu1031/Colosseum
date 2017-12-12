@@ -1,5 +1,5 @@
 
-public abstract class Hero {
+public class Hero {
 	String name; 
 	int healthPoints;
 	int attackPoints;

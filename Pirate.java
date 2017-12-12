@@ -12,13 +12,13 @@ public class Pirate extends Hero {
         
         if (stealGold <= 0.01) {
             System.out.println(this.name + " stole all of " + opponent.name + "'s gold!");
-        }
+        } else
         if (specProb >= 0.9){
            System.out.println(this.name + " uses Blunderbuss!");
            opponent.healthPoints -= (3 * this.attackPoints) - opponent.defense;
         } else 
             if (Math.random() >= dodgeProb){
-                System.out.println(opponent.name + " dodged!"); 
+            	System.out.println(opponent.name + " dodged " + this.name + "'s attack!"); 
         } else {
             System.out.println(this.name + " attacks!"); 
             opponent.healthPoints -= this.attackPoints - opponent.defense; 

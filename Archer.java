@@ -1,6 +1,6 @@
 public class Archer extends Hero{
     public Archer(String name) {
-        super(name, 100, 10, 9, 2, 0.2);
+        super(name, 100, 20, 9, 2, 0.2);
     }
  public final void attack(final Hero opponent) {
         double specProb = Math.random();
@@ -16,7 +16,7 @@ public class Archer extends Hero{
         opponent.healthPoints -= (3 * this.attackPoints) - opponent.defense;
     } else 
         if(Math.random() >=dodgeProb) {
-        System.out.println(opponent.name + " dodged opponent's attack!");
+        System.out.println(opponent.name + " dodged " + this.name + "'s attack!");
     } else {
           System.out.println(this.name + " attacks opponent with basic shot.");
             opponent.healthPoints -= this.attackPoints - opponent.defense;
